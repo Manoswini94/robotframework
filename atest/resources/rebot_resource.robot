@@ -17,3 +17,9 @@ Create Output With Robot
     Set Suite Variable    $ORIG_END        ${SUITE.end_time}
     Set Suite Variable    $ORIG_ELAPSED    ${SUITE.elapsed_time}
     IF    $outputname    Move File    ${OUTFILE}    ${outputname}
+
+New Keyword To Check
+    page should contain  ${element}
+    wait until element is visible  ${element}  timeout=60
+    click element  ${element}
+    Log to console  This is working
